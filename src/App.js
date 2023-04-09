@@ -29,7 +29,7 @@ const App = () => {
   };
 
   const deleteNote = (id) => {
-    const newNotes = notes.filter((note) => note.id != id);
+    const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
   };
 
