@@ -18,14 +18,15 @@ const App = () => {
     localStorage.setItem("react-notes-app-data", JSON.stringify(notes));
   }, [notes]);
 
-  const addNote = (text) => {
+  const addNote = (text, title) => {
     const date = new Date();
     const newNote = {
       text: text,
+      title: title,
       date: date.toLocaleDateString(),
       id: nanoid(),
     };
-    setNotes([...notes, newNote]);
+    setNotes([newNote, ...notes]);
   };
 
   const deleteNote = (id) => {
@@ -39,8 +40,10 @@ const App = () => {
         <Header handleToggleDarkMode={setDarkMode} />
         <Search handleSearchNote={setSearchText} />
         <NotesList
-          notes={notes.filter((note) =>
-            note.text.toLowerCase().includes(serachText)
+          notes={notes.filter(
+            (note) =>
+              note.text.toLowerCase().includes(serachText.toLowerCase()) ||
+              note.title.toLowerCase().includes(serachText.toLowerCase())
           )}
           handleAddNote={addNote}
           handleDeleteNote={deleteNote}

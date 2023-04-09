@@ -92,18 +92,33 @@ textarea:focus {
   outline: none;
 }
 
-.header{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.dark-mode{
-    background-color: black;
+.dark-mode {
+  background-color: black;
 }
 
-.dark-mode h1{
-    color:white; 
+.dark-mode h1 {
+  color: white;
 }
 
+.note-content {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
 
+.note-title {
+  font-weight: bold;
+  font-size: 18px;
+  
+}
+
+.addnote-title{
+  font-weight: bold;
+  font-size: 18px;
+}
